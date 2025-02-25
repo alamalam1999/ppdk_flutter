@@ -1,6 +1,8 @@
 import 'package:first_project/container.dart';
 import 'package:first_project/first.dart';
 import 'package:first_project/first_2.dart';
+import 'package:first_project/gridView.dart';
+import 'package:first_project/stackView.dart';
 import 'package:first_project/listView.dart';
 import 'package:first_project/mapView.dart';
 import 'package:first_project/modelView.dart';
@@ -34,9 +36,10 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
     // FirstClass(),
     // First2Class(),
     // MyWidgetContainer(),
-    ListViewExampleApp(),
-    MapViewExampleApp(),
-    ModelViewExampleApp()
+    // ListViewExampleApp(),
+    MyWidgetGridView(),
+    MyWidgetGrid()
+    // ModelViewExampleApp()
   ];
 
   void _onItemTapped(int index) {
@@ -141,9 +144,11 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
           // BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Check'),
           // BottomNavigationBarItem(icon: Icon(Icons.business), label: 'Business'),
           // BottomNavigationBarItem(icon: Icon(Icons.school), label: 'School'),
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'List View'),
-          BottomNavigationBarItem(icon: Icon(Icons.map), label: 'List Map'),
-          BottomNavigationBarItem(icon: Icon(Icons.model_training), label: 'List Model'),
+          // BottomNavigationBarItem(icon: Icon(Icons.list), label: 'List View'),
+          // BottomNavigationBarItem(icon: Icon(Icons.map), label: 'List Map'),
+          // BottomNavigationBarItem(icon: Icon(Icons.model_training), label: 'List Model'),
+          BottomNavigationBarItem(icon: Icon(Icons.grid_3x3), label: 'Grid View'),
+          BottomNavigationBarItem(icon: Icon(Icons.stacked_bar_chart), label: 'Stack View'),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
