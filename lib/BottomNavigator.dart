@@ -1,7 +1,9 @@
 import 'package:first_project/container.dart';
+import 'package:first_project/expanded_grid.dart';
 import 'package:first_project/first.dart';
 import 'package:first_project/first_2.dart';
 import 'package:first_project/gridView.dart';
+import 'package:first_project/loginPage.dart';
 import 'package:first_project/stackView.dart';
 import 'package:first_project/listView.dart';
 import 'package:first_project/mapView.dart';
@@ -37,9 +39,11 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
     // First2Class(),
     // MyWidgetContainer(),
     // ListViewExampleApp(),
-    MyWidgetGridView(),
-    MyWidgetGrid()
-    // ModelViewExampleApp()
+    // MyWidgetGridView(),
+    MyWidgetGrid(),
+    ModelViewExampleApp(),
+    MyWidgetGrid_Expanded(),
+    MyWidgetPageLogin(),
   ];
 
   void _onItemTapped(int index) {
@@ -134,6 +138,15 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
                  Navigator.pop(context);
               },
             ),
+            ListTile(
+              leading: Icon(Icons.login),
+              title: Text("Login"),
+              selected: _selectedIndex == 3,
+              onTap: () {
+                _onItemTapped(3);
+                 Navigator.pop(context);
+              }
+            )
           ],
         ),
       ),
@@ -147,11 +160,16 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
           // BottomNavigationBarItem(icon: Icon(Icons.list), label: 'List View'),
           // BottomNavigationBarItem(icon: Icon(Icons.map), label: 'List Map'),
           // BottomNavigationBarItem(icon: Icon(Icons.model_training), label: 'List Model'),
-          BottomNavigationBarItem(icon: Icon(Icons.grid_3x3), label: 'Grid View'),
-          BottomNavigationBarItem(icon: Icon(Icons.stacked_bar_chart), label: 'Stack View'),
+          // BottomNavigationBarItem(icon: Icon(Icons.grid_3x3), label: 'Grid View'),
+          // BottomNavigationBarItem(icon: Icon(Icons.stacked_bar_chart), label: 'Stack View'),
+          BottomNavigationBarItem(icon: Icon(Icons.expand),label: 'Expanded'),
+          BottomNavigationBarItem(icon: Icon(Icons.expand_circle_down), label: 'Expanded Data'),
+          BottomNavigationBarItem(icon: Icon(Icons.expand_less_sharp), label: "Expanded Check"),
+          BottomNavigationBarItem(icon: Icon(Icons.expand_less_sharp), label: "Expanded Check"),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
+        type: BottomNavigationBarType.fixed,
         onTap: _onItemTapped,
       ),
     );

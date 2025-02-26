@@ -1,3 +1,4 @@
+import 'package:first_project/main/model/modelControl.dart';
 import 'package:flutter/material.dart';
 
 class MyWidgetGridView extends StatelessWidget {
@@ -6,45 +7,42 @@ class MyWidgetGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GridView.count(
-  primary: false,
-  padding: const EdgeInsets.all(20),
-  crossAxisSpacing: 10,
-  mainAxisSpacing: 10,
-  crossAxisCount: 2,
-  children: <Widget>[
-    Container(
-      padding: const EdgeInsets.all(8),
-      color: Colors.teal[100],
-      child: const Text("He'd have you all unravel at the"),
-    ),
-    Container(
-      padding: const EdgeInsets.all(8),
-      color: Colors.teal[200],
-      child: const Text('Heed not the rabble'),
-    ),
-    Container(
-      padding: const EdgeInsets.all(8),
-      color: Colors.teal[300],
-      child: const Text('Sound of screams but the'),
-    ),
-    Container(
-      padding: const EdgeInsets.all(8),
-      color: Colors.teal[400],
-      child: const Text('Who scream'),
-    ),
-    Container(
-      padding: const EdgeInsets.all(8),
-      color: Colors.teal[500],
-      child: const Text('Revolution is coming...'),
-    ),
-    Container(
-      padding: const EdgeInsets.all(8),
-      color: Colors.teal[600],
-      child: const Text('Revolution, they...'),
-    ),
-  ],
-)
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          itemCount: nameData.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+          ),
+          itemBuilder: (context, index) {
+            final data = nameData[index];
+            final warna = nameData[index].color;
+            return Container(
+              padding: const EdgeInsets.all(8),
+              color: Colors.teal[100],
+              child: Container(
+                color: warna,
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(data.name)
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text(data.alamat)
+                      ],
+                    ),
+                  ],
+                ),
+              ),  
+            );
+          },
+        ),
+      ),
     );
   }
 }

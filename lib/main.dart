@@ -2,6 +2,7 @@ import 'package:first_project/BottomNavigator.dart';
 import 'package:first_project/container.dart';
 import 'package:first_project/drawer.dart';
 import 'package:first_project/first.dart';
+import 'package:first_project/loginPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(0, 173, 207, 198)),
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: const BottomNavigationBarExampleApp()
+      home: const MyWidgetPageLogin()
     );
   }
 }
