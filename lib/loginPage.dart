@@ -18,13 +18,16 @@ class MyWidgetPageLogin extends StatelessWidget {
                   Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(20.0),
+                        padding: const EdgeInsets.only(
+                          left: 40,bottom: 30
+                        ),
                         child: Row(
                           children: [
                             Icon(Icons.arrow_back_ios, size: 20),
                             SizedBox(width: 5),
-                            Text("LOGIN", style: TextStyle(
-                            fontSize: 20
+                            Text("Login", style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold
                             )),
                           ],
                         ),
@@ -35,7 +38,9 @@ class MyWidgetPageLogin extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(20.0),
+                          padding: const EdgeInsets.only(
+                            bottom: 10, top: 10,left: 40
+                          ),
                           child: Row(
                             children: [
                               Text("Welcome Back", style: TextStyle(
@@ -46,7 +51,8 @@ class MyWidgetPageLogin extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(20),
+                          padding: const EdgeInsets.only(
+                          bottom: 30,left: 40),
                           child: Row(
                             children: [
                               Text("Sign in to your Account", style: TextStyle(
@@ -131,6 +137,18 @@ class MyWidgetPageLogin extends StatelessWidget {
                             ),
                             ],
                           ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              top: 6,
+                              left: 170
+                            ),
+                            child: Row(
+                              children: [
+                                Text("Forgot Password ?",style: 
+                                TextStyle(color: Color(0xFFEA9459),fontWeight: FontWeight.bold),)
+                              ],
+                            ),
+                          )
                         ],
                       )
                     ],
@@ -140,7 +158,7 @@ class MyWidgetPageLogin extends StatelessWidget {
                     // ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 30),
+                    padding: const EdgeInsets.only(top: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -148,7 +166,7 @@ class MyWidgetPageLogin extends StatelessWidget {
                           height: 50,
                           width: 300,
                           decoration: BoxDecoration(
-                              color: Colors.blue,
+                              color: Color(0xFF283FB1),
                               borderRadius: BorderRadius.circular(23) 
                           ),
                           child: Center(child: Text("Login", style: TextStyle(
@@ -160,8 +178,92 @@ class MyWidgetPageLogin extends StatelessWidget {
                         )
                       ],
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 12,
+                      left: 40
+                    ),
+                    child: Row(
+                      children: [
+                        Text("Don't have account? "),
+                        Text("Sign up", style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFFEA9459)
+                        ),)
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 23
+                    ),
+                    child: Column(
+                      children: [
+                        Text("Or Sign in with")
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 23
+                    ),
+                    child: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Column(
+                            children: [
+                              Container(
+                                height: 50,
+                                width: 140, 
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFFAFAFA),
+                                  borderRadius: BorderRadius.circular(23),
+                                  image: DecorationImage(
+                                    image: AssetImage("images/Google.png"),
+                                  )
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            width: 23,
+                          ),
+                          Column(
+                            children: [
+                              Container(
+                                height: 50,
+                                width: 140,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(23),
+                                  color: Color(0xFFFAFAFA),
+                                  image: DecorationImage(
+                                    image: AssetImage("images/Facebook.png"),
+                                  )
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left:40,
+                      top: 30
+                    ),
+                    child: Row(
+                      children: [
+                        Text("Dont have an Account? "),
+                        Text("Join Us",style: TextStyle(
+                          color: Color(0xFFEA9459)
+                          ,fontWeight: FontWeight.bold
+                        ),)
+                      ],
+                    ),
                   )
-
                 ],
               ),
             ),
