@@ -17,23 +17,28 @@ class BottomNavigationBarExampleApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomNavigationBarExample());
+      home: BottomNavigationBarExample(),
+    );
   }
 }
 
 class BottomNavigationBarExample extends StatefulWidget {
-
   const BottomNavigationBarExample({super.key});
 
   @override
-  State<BottomNavigationBarExample> createState() => _BottomNavigationBarExampleState();
+  State<BottomNavigationBarExample> createState() =>
+      _BottomNavigationBarExampleState();
 }
 
-class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample> {
+class _BottomNavigationBarExampleState
+    extends State<BottomNavigationBarExample> {
   int _selectedIndex = 0;
 
-  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
- 
+  static const TextStyle optionStyle = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+  );
+
   static const List<Widget> _widgetOptions = <Widget>[
     // FirstClass(),
     // First2Class(),
@@ -43,7 +48,7 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
     MyWidgetGrid(),
     ModelViewExampleApp(),
     MyWidgetGrid_Expanded(),
-    MyWidgetPageLogin(),
+    MyWidgetGridView(),
   ];
 
   void _onItemTapped(int index) {
@@ -81,7 +86,8 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
                               shape: BoxShape.circle,
                               image: DecorationImage(
                                 image: NetworkImage(
-                                    "https://pemilu.bisnis.com/img/capres/Erick-Thohir.png?id=4689460d126672dc7667745ebc829360"),
+                                  "https://pemilu.bisnis.com/img/capres/Erick-Thohir.png?id=4689460d126672dc7667745ebc829360",
+                                ),
                               ),
                             ),
                           ),
@@ -134,8 +140,8 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
               selected: _selectedIndex == 2,
               onTap: () {
                 // Handle the tap
-                 _onItemTapped(2);
-                 Navigator.pop(context);
+                _onItemTapped(2);
+                Navigator.pop(context);
               },
             ),
             ListTile(
@@ -144,9 +150,9 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
               selected: _selectedIndex == 3,
               onTap: () {
                 _onItemTapped(3);
-                 Navigator.pop(context);
-              }
-            )
+                Navigator.pop(context);
+              },
+            ),
           ],
         ),
       ),
@@ -162,10 +168,19 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
           // BottomNavigationBarItem(icon: Icon(Icons.model_training), label: 'List Model'),
           // BottomNavigationBarItem(icon: Icon(Icons.grid_3x3), label: 'Grid View'),
           // BottomNavigationBarItem(icon: Icon(Icons.stacked_bar_chart), label: 'Stack View'),
-          BottomNavigationBarItem(icon: Icon(Icons.expand),label: 'Expanded'),
-          BottomNavigationBarItem(icon: Icon(Icons.expand_circle_down), label: 'Expanded Data'),
-          BottomNavigationBarItem(icon: Icon(Icons.expand_less_sharp), label: "Expanded Check"),
-          BottomNavigationBarItem(icon: Icon(Icons.expand_less_sharp), label: "Expanded Check"),
+          BottomNavigationBarItem(icon: Icon(Icons.expand), label: 'Expanded'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.expand_circle_down),
+            label: 'Expanded Data',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.expand_less_sharp),
+            label: "Expanded Check",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.expand_less_sharp),
+            label: "Expanded Check",
+          ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
