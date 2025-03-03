@@ -159,6 +159,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                       ),
+                      TextButton(
+                        onPressed: () {
+                          context.go('/fruits/fruit-detail');
+                        },
+                        child: Text('Go to Fruit Detail'),
+                      ),
                     ],
                   ),
                   Column(
